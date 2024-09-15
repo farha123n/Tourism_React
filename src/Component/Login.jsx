@@ -1,4 +1,4 @@
-import { Navigate, NavLink } from "react-router-dom";
+import { Navigate, NavLink, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import { useState, useRef, useContext } from "react";
 import { Link,  useNavigate } from "react-router-dom";
@@ -14,6 +14,7 @@ import { AuthContext } from "../Contex/AuthProvider";
 
 
 const Login = () => {
+  const location=useLocation();
   const navigate=useNavigate();
   const {signInUser}=useContext(AuthContext);
   const handleLogin = async (e) => {
@@ -27,7 +28,7 @@ const Login = () => {
         console.log("successful", result.user);
         e.target.reset();
         toast.success("Login successful");
-        navigate('/');
+        navigate(location?.state? location.state:'/');
     } catch (error) {
         toast.error(error.message);
     }

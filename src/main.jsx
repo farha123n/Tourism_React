@@ -14,6 +14,7 @@ import { HelmetProvider } from "react-helmet-async";
 import TouristSpot from "./Component/TouristSpot";
 import AddtouristSpot from "./Component/AddtouristSpot";
 import View from "./Component/View";
+import PrivateRoute from "./Contex/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
     {
       
       path:"/view/:id",
-      element:<View></View>
+      element:<PrivateRoute><View></View></PrivateRoute>
 
     }
    

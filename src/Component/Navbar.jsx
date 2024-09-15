@@ -16,7 +16,7 @@ const Navbar = () => {
           <li ><NavLink to="/" className="flex"><FaHome className="pt-2" /> Home</NavLink></li>
           <li><NavLink to="/allTouristSpot" className='flex'> <MdTour className="pt-2"/>All tourist spot</NavLink></li>
          <li><NavLink to="/addTouristSpot" className="flex"> <MdAddBox className="pt-2" />Add tourist spot</NavLink></li>
-          <li><NavLink to="/myList" className='flex'><CiBoxList /> My list</NavLink></li>
+          {user&&  <li><NavLink to="/myList" className='flex'><CiBoxList /> My list</NavLink></li>}
           
         </>
     );
