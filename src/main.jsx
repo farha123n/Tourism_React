@@ -15,6 +15,7 @@ import TouristSpot from "./Component/TouristSpot";
 import AddtouristSpot from "./Component/AddtouristSpot";
 import View from "./Component/View";
 import PrivateRoute from "./Contex/PrivateRoute";
+import MyList from "./Component/MyList";
 
 const router = createBrowserRouter([
   {
@@ -45,8 +46,14 @@ const router = createBrowserRouter([
     {
       
       path:"/view/:id",
-      element:<PrivateRoute><View></View></PrivateRoute>
+      element:<PrivateRoute><View></View></PrivateRoute>,
+      loader: () => fetch('http://localhost:5000/allSpot')
 
+    },
+    {
+      path:"/myList",
+      element:<PrivateRoute><MyList></MyList></PrivateRoute>,
+      loader: () => fetch('http://localhost:5000/allSpot')
     }
    
    

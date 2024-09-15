@@ -37,19 +37,21 @@ const TouristSpot = () => {
             </button>
     
             {/* Display sorted spots */}
+            <div >
             {shorted ? (
-              <div>
+              <div className="grid lg:grid-cols-3 gap-10">
                 {short.map((tourist) => (
                   <TouristSpotCard key={tourist._id} tourist={tourist}></TouristSpotCard>
                 ))}
               </div>
             ) : (
-              <div>
+              <div className="grid lg:grid-cols-3 gap-10">
                 {AllTouristSpot.map((tourist) => (
                   <TouristSpotCard key={tourist._id} tourist={tourist}></TouristSpotCard>
                 ))}
               </div>
             )}
+            </div>
         </div>
     );
 };
